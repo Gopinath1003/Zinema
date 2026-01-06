@@ -3,7 +3,7 @@ import { getPopularMovies } from "../services/api";
 import { searchMovie } from "../services/api";
 import MovieCard from "../components/MovieCard";
 import Timer from "../components/Timer";
-import Favs from './Favs'
+import Favs from "./Favs";
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -17,7 +17,7 @@ function Home() {
 
   const handleQuery = () => {
     searchMovie(query)
-      .then((res) => setMovies(res.data.results))
+      .then((res) => setMovies(res))
       .catch((err) => console.log(err));
   };
 
@@ -33,11 +33,10 @@ function Home() {
           placeholder="Search for Movies..."
           value={query}
           onChange={handleQueryChange}
-          className="w-[300px] border border-gray-400 rounded-3xl pl-6 p-2 mr-1  active:border-gray-500"
-      
+          className="w-75 border border-gray-400 rounded-3xl pl-6 p-2 mr-1  active:border-gray-500"
         />
         <button
-          className="w-[90px] bg-orange-400 hover:bg-amber-600 cursor-pointer transition hover:scale-103 text-white p-2 rounded-3xl"
+          className="w-22.5 bg-orange-400 hover:bg-amber-600 cursor-pointer transition hover:scale-103 text-white p-2 rounded-3xl"
           onClick={handleQuery}
         >
           Search
@@ -46,10 +45,9 @@ function Home() {
       <h1 className="p-4 font-bold text-2xl font-mono ">Popular Movies</h1>
       <div className="grid grid-cols-5 gap-y-4">
         {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
-      ))}
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
       </div>
-      
     </div>
   );
 }

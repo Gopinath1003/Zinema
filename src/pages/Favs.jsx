@@ -3,7 +3,6 @@ import { useMovieContext } from "../context/MovieContext";
 
 function Favs() {
   const { favs } = useMovieContext();
-  console.log(favs);
   if (favs) {
     return (
       <div>

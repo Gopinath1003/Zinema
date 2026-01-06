@@ -15,7 +15,7 @@ const Login = () => {
 
   return (
     <div className="w-full h-screen flex items-center justify-center">
-    <div className=" w-[600px] h-[300px] p-5 flex  rounded-2xl border border-gray-300 shadow-lg">
+    <div className=" w-150 h-75 p-5 flex  rounded-2xl border border-gray-300 shadow-lg">
       <div className="w-1/2 p-5">
         <h2 className="text-2xl font-medium pb-6">Login to Zinema</h2>
         <form className="flex flex-col" onSubmit={handleSubmit}>

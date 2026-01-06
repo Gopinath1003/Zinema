@@ -1,20 +1,31 @@
 import axios from "axios";
 
-const API_KEY = "4f63d8d2dc46ecb660c356ef26c147a8";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
 
-export const getPopularMovies = async() => {
-    const response = await axios.get(`${BASE_URL}/movie/popular?api_key=${API_KEY}`);
-    const data = response.data.results;
-    console.log(data);
-    return data;
-}
+export const getPopularMovies = async () => {
 
-export const searchMovie = (query) => {
-    return axios.get(`${BASE_URL}/search/movie`,{
-        params : {
-            api_key : API_KEY,
-            query
-        }
-    });
+  const response = await axios.get(
+    `${BASE_URL}/movie/popular`,
+    {
+      params: {
+        api_key: API_KEY,
+      },
+    }
+  );
+  return response.data.results;
+};
+
+export const searchMovie = async (query) => {
+
+  const response = await axios.get(
+    `${BASE_URL}/search/movie`,
+    {
+      params: {
+        api_key: API_KEY,
+        query,
+      },
+    }
+  );
+  return response.data.results;
 };
