@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Favs from "./pages/Favs";
 import Watched from "./pages/Watched";
-import Watchlist from "./pages/WatchList";
+import Watchlist from "./pages/Watchlist";
 
 function App() {
   return (
