@@ -49,7 +49,7 @@ const voteBg =
 
   return (
     <div
-      className="group flex flex-col w-64 rounded-lg border border-gray-300 
+      className="group flex flex-col w-full rounded-lg border border-gray-300 
                 hover:shadow-xl hover:scale-101 transition"
     >
       <div className="w-full relative">
